@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import AppPackage.AnimationClass;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.Timer;
+import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -34,7 +34,7 @@ public class Laberinto extends javax.swing.JFrame {
     AnimationClass animator = new AnimationClass();
     Timer timer;
     boolean finded  = false;
-    
+       
     /**
      * Creates new form Laberinto
      */
@@ -658,7 +658,7 @@ public class Laberinto extends javax.swing.JFrame {
             for(int i: d.dijkstra.shortPath){
                 Label lb = getLabelByName(i);
                 lb.setText("•");
-                lb.setBackground(Color.GRAY);
+                lb.changeColor(Color.GRAY);
             }
             
             if(d.dijkstra.shortPath.size() == 1){
